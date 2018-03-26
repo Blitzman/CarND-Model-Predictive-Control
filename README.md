@@ -44,8 +44,14 @@ Tips for setting up the environment can be found [here](https://classroom.udacit
 
 #### Timestep length and elapsed duration (N & dt)
 
+#### Polynomial fitting and MPC processing
+
+A third order polynomial is fitted to the waypoints in line 115 of `src/main.cpp` to later feed the MPC solver. Before that fitting, the waypoints are preprocessed (lines 108-113 of `src/main.cpp`) to transform them into the vehicle's space.
+
 #### Model predictive control with latency
 
 ### Simulation
 
 #### The vehicle must successfully drive a lap around the track
+
+Using our MPC implementation, the car is able to successfully drive a lap around the track without popping up onto ledges or rolling over any surfaces that would be considered unsafe. A video is included to demo that successful lap.
