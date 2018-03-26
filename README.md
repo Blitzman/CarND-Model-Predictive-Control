@@ -42,6 +42,18 @@ Tips for setting up the environment can be found [here](https://classroom.udacit
 
 #### The model
 
+![math1](img/math1.gif)
+
+![math2](img/math2.gif)
+
+![math3](img/math3.gif)
+
+![math4](img/math4.gif)
+
+![math5](img/math5.gif)
+
+![math6](img/math6.gif)
+
 #### Timestep length and elapsed duration (N & dt)
 
 #### Polynomial fitting and MPC processing
