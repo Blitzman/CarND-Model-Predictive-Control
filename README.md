@@ -27,7 +27,7 @@ Tips for setting up the environment can be found [here](https://classroom.udacit
 4. `cd build`
 5. `cmake ..`
 6. `make`
-7. `./ExtendedKF`
+7. `./mpc`
 8. Run simulator
 
 ---
@@ -42,6 +42,8 @@ Tips for setting up the environment can be found [here](https://classroom.udacit
 
 #### The model
 
+The kinemactic model that we have used in this project corresponds to the one explained in the lessons. This model is able to predict the state of the next time step by taking into account the current state and the actuators according to the following equations (where `x_t` and `y_t` are the current vehicle coordinates, `v_t` is the current velocity, and `psi_t` is the current orientation angle):
+
 ![math1](img/math1.gif)
 
 ![math2](img/math2.gif)
@@ -50,9 +52,13 @@ Tips for setting up the environment can be found [here](https://classroom.udacit
 
 ![math4](img/math4.gif)
 
+The Cross Track Error (CTE) and Psi error (Epsi) are computed as follows:
+
 ![math5](img/math5.gif)
 
 ![math6](img/math6.gif)
+
+This model was implemented in lines 83-88 of `src/MPC.cpp` by filling the corresponding positions of the `fg` array.
 
 #### Timestep length and elapsed duration (N & dt)
 
