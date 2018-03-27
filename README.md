@@ -64,11 +64,16 @@ This model was implemented in lines 83-88 of `src/MPC.cpp` by filling the corres
 
 #### Timestep length and elapsed duration (N & dt)
 
+The timestep length and duration combination that provided the best results was `N=10` and `dt=0.1`. Those values were empirically chosen after trying various combinations.
+
 #### Polynomial fitting and MPC processing
 
 A third order polynomial is fitted to the waypoints in line 115 of `src/main.cpp` to later feed the MPC solver. Before that fitting, the waypoints are preprocessed (lines 108-113 of `src/main.cpp`) to transform them into the vehicle's space.
 
 #### Model predictive control with latency
+
+Our MPC implementation is able to handle a 100 millisecond latency. In order to achieve this robustness we were inspired by other approaches taken by Jeremy Shannon and NikolasEnt. On the one hand, the original equations for the kinematics depend on the actuations from the previous timestep. However, with 100ms delay they are applied one timestep later (which is 100ms or 0.1s, our specified `dt`). To take that into account, we introduced code in `src/MPC.cpp` (lines 66-69) to make the model use the previous timestep actuations to account for latency. On the other hand, we also penalized the combination of velocity and delta (line 29 on `src/MPC.cpp`) with a weight `w_dv`.
+
 
 ### Simulation
 

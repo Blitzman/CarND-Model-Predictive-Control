@@ -6,7 +6,7 @@
 
 using namespace std;
 
-const size_t N = 20;
+const size_t N = 10;
 const double dt = 0.1;
 
 // This value assumes the model presented in the classroom is used.
@@ -36,11 +36,12 @@ const double ref_epsi = 0.0;
 const double ref_v = 70.0;
 
 // Weights for the cost function
-const double w_cte = 3000.0;
-const double w_epsi = 3000.0;
+const double w_cte = 2500.0;
+const double w_epsi = 3200.0;
 const double w_v = 1.0;
-const double w_delta = 5.0;
-const double w_a = 5.0;
+const double w_delta = 7.0;
+const double w_a = 4.0;
+const double w_dv = 700.0;
 const double w_ddelta = 200.0;
 const double w_da = 10.0;
 
