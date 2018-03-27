@@ -38,6 +38,8 @@ Tips for setting up the environment can be found [here](https://classroom.udacit
 
 #### Your code should compile
 
+The code compiles without errors with `cmake` and `make`. The `CMakeLists.txt` file was not changed from the original version.
+
 ### Implementation
 
 #### The model
@@ -73,3 +75,5 @@ A third order polynomial is fitted to the waypoints in line 115 of `src/main.cpp
 #### The vehicle must successfully drive a lap around the track
 
 Using our MPC implementation, the car is able to successfully drive a lap around the track without popping up onto ledges or rolling over any surfaces that would be considered unsafe. A video is included to demo that successful lap.
+
+[![ProjectVideo](http://img.youtube.com/vi/OEBSJaWOayw/0.jpg)](https://www.youtube.com/watch?v=OEBSJaWOayw "Self-Driving Car Nanodegree - Model Predictive Control")
